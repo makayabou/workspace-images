@@ -15,7 +15,14 @@ jobs:
           name: Save test results
           command: |
             mkdir -p ~/test-results/dazzle/
-            cp full/*.xml ~/test-results/dazzle
+            echo "  "
+            echo "=============="
+            echo "   "
+            echo "cwd dir is :"
+            pwd
+            ls
+            ls -l full
+            cp full/*.xml ~/test-results/dazzle || :
           when: always
       - store_test_results:
           path: ~/test-results
